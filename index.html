@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Doble Cosecha · Revista AMAYAD</title>
+<meta name="description" content="Doble Cosecha / Double Harvest, la revista trimestral de AMAYAD sobre agrivoltaica y agricultura digital. Edición Nº 01, Q1 2027, lista para descarga e imprenta.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;0,9..144,800;1,9..144,500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+:root {
+  --ink: #12261C;
+  --green: #1F5C3A;
+  --gold: #F0A202;
+  --paper: #F2F4EF;
+  --sage: #DDE6D8;
+  --muted: #3D4D43;
+  --line: #C9D4C4;
+  --navy: #0B2545;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+  line-height: 1.55;
+}
+a { color: var(--green); }
+img { max-width: 100%; display: block; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 22px; }
+.topbar {
+  background: var(--ink);
+  color: var(--paper);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.topbar .wrap { display: flex; justify-content: space-between; gap: 12px; align-items: center; padding: 10px 22px; flex-wrap: wrap; }
+.lang button {
+  font: inherit; font-size: 12px; min-width: 44px; min-height: 32px;
+  padding: 4px 10px; cursor: pointer; border: 1px solid #5E7366; background: transparent; color: var(--paper);
+}
+.lang button.on { background: var(--gold); color: var(--ink); border-color: var(--gold); }
+header.site {
+  display: flex; justify-content: space-between; gap: 18px; align-items: center;
+  padding: 18px 0; flex-wrap: wrap;
+}
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink); }
+.brand strong { font-family: Fraunces, serif; font-weight: 800; font-size: 28px; letter-spacing: -0.02em; }
+nav { display: flex; flex-wrap: wrap; gap: 8px 22px; font-weight: 500; }
+nav a { text-decoration: none; color: var(--ink); padding: 8px 0; }
+.hero { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 42px; align-items: center; padding: 28px 0 54px; }
+.kicker { font-family: "IBM Plex Mono", monospace; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green); }
+h1 { font-family: Fraunces, serif; font-weight: 800; font-size: clamp(42px, 6vw, 76px); line-height: 0.96; letter-spacing: -0.03em; margin: 12px 0; }
+.lede { font-size: 19px; max-width: 38rem; color: var(--muted); margin: 0 0 22px; }
+.cta { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn { text-decoration: none; padding: 14px 22px; font-weight: 600; border-radius: 2px; border: 0; cursor: pointer; display: inline-block; }
+.btn-ink { background: var(--ink); color: var(--paper); }
+.btn-gold { background: var(--gold); color: var(--ink); }
+.btn-ghost { background: transparent; color: var(--ink); border: 1px solid var(--ink); }
+.cover-card { background: var(--sage); border: 2px solid var(--ink); padding: 14px; }
+.cover-card img { width: 100%; height: 280px; object-fit: cover; }
+.cover-card figcaption { font-family: "IBM Plex Mono", monospace; font-size: 12px; letter-spacing: 0.04em; margin-top: 10px; }
+.section { padding: 28px 0 10px; }
+h2 { font-family: Fraunces, serif; font-weight: 800; font-size: clamp(30px, 4vw, 46px); line-height: 1.05; letter-spacing: -0.02em; margin: 8px 0 14px; }
+.grid-4, .grid-2, .grid-3 { display: grid; gap: 16px; }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+.grid-2 { grid-template-columns: 1fr 1fr; }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.card { background: white; border: 1px solid var(--line); padding: 18px; }
+.card .tag { font-family: "IBM Plex Mono", monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--green); }
+.card h3 { font-family: Fraunces, serif; margin: 8px 0; font-size: 22px; }
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 16px; }
+.stat { background: var(--ink); color: var(--paper); padding: 14px; }
+.stat b { display: block; color: var(--gold); font-family: Fraunces, serif; font-size: 22px; }
+.stat span { font-size: 13px; }
+.feature { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 28px; align-items: center; background: white; border: 2px solid var(--ink); }
+.feature img { width: 100%; height: 100%; min-height: 280px; object-fit: cover; }
+.feature div { padding: 28px; }
+.index-row { display: grid; grid-template-columns: 52px 1fr auto; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--line); align-items: baseline; }
+.index-row b { font-family: Fraunces, serif; color: var(--gold); font-size: 20px; }
+.ler-box { background: var(--ink); color: var(--paper); padding: 28px; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 24px; }
+.ler-box input[type=range] { width: 100%; accent-color: var(--gold); }
+.ler-num { font-family: Fraunces, serif; font-size: 84px; line-height: 0.9; color: var(--gold); }
+label.slider { display: block; margin: 14px 0; font-size: 14px; }
+.plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.plan { border: 2px solid var(--ink); padding: 18px; background: white; }
+.plan strong { font-family: Fraunces, serif; font-size: 26px; display: block; }
+form.sub { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
+input[type=email] { flex: 1; min-width: 220px; padding: 12px; border: 1px solid var(--ink); font: inherit; background: white; }
+.note { font-size: 13px; color: var(--muted); }
+footer { background: var(--ink); color: var(--paper); margin-top: 48px; padding: 36px 0 28px; }
+footer a { color: var(--gold); }
+.band { background: var(--navy); color: white; }
+.band a { color: var(--gold); }
+@media (max-width: 860px) {
+  .hero, .feature, .ler-box, .grid-4, .grid-3, .grid-2, .stats, .plans { grid-template-columns: 1fr; }
+  .index-row { grid-template-columns: 42px 1fr; }
+  .index-row span.pg { grid-column: 2; }
+}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="wrap">
+    <span id="publisher">Una publicación de AMAYAD · Nº 01 · Q1 2027</span>
+    <div class="lang" role="group" aria-label="Idioma">
+      <button type="button" id="btn-es" class="on">ES</button>
+      <button type="button" id="btn-en">EN</button>
+    </div>
+  </div>
+</div>
+<div class="band">
+  <div class="wrap" style="padding:10px 22px; font-size:14px; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+    <span id="assoc">Asociación Mexicana de Agrivoltaics y Agricultura Digital</span>
+    <a href="https://laescobedo.github.io/amayad-preview-site/" id="assoc-link">Sitio de AMAYAD</a>
+  </div>
+</div>
+<div class="wrap">
+  <header class="site">
+    <a class="brand" href="#top">
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="#12261C" stroke-width="2" aria-hidden="true"><circle cx="20" cy="12" r="6" fill="#F0A202" stroke="none"></circle><path d="M4 22 L36 16"></path><path d="M10 21 V34 M30 17 V34"></path><path d="M4 34 Q12 28 20 34 Q28 28 36 34"></path></svg>
+      <strong>Doble Cosecha</strong>
+    </a>
+    <nav>
+      <a href="#portada" data-es="En portada" data-en="Cover">En portada</a>
+      <a href="#indice" data-es="Índice" data-en="Contents">Índice</a>
+      <a href="#ler" data-es="Calculadora LER" data-en="LER calculator">Calculadora LER</a>
+      <a href="#descarga" data-es="PDF" data-en="PDF">PDF</a>
+      <a href="#suscripcion" data-es="Suscríbete" data-en="Subscribe">Suscríbete</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="top">
+    <div>
+      <div class="kicker" id="kicker">Revista trimestral de agrivoltaica · Edición Nº 01</div>
+      <h1 id="hero-title">La revolución del doble cosechado</h1>
+      <p class="lede" id="hero-lede">Energía y alimento en la misma hectárea. Ingeniería, agronomía, finanzas y política pública para quienes construyen la agrivoltaica en México y Latinoamérica.</p>
+      <div class="cta">
+        <a class="btn btn-ink" href="assets/Doble-Cosecha-N01-Q1-2027.pdf" download id="cta-pdf">Descargar el PDF de imprenta</a>
+        <a class="btn btn-gold" href="#suscripcion" id="cta-sub">Recibir la edición impresa</a>
+        <a class="btn btn-ghost" href="#indice" id="cta-read">Ver el índice</a>
+      </div>
+      <p class="note" id="hero-note" style="margin-top:14px;">Nº 01 · 24 páginas · A4 con sangrado de 3 mm y marcas de corte. Firma a caballete. Editor: Luis Alfonso Escobedo.</p>
+    </div>
+    <figure class="cover-card">
+      <img src="assets/Ph2Mi.jpg" alt="Arreglo elevado sobre hileras de berries en el altiplano">
+      <figcaption id="figcap">Estructura elevada · cultivo entre hileras · BESS · ilustración editorial de portada</figcaption>
+    </figure>
+  </section>
+
+  <section class="section" id="termo">
+    <div class="kicker" data-es="Radar" data-en="Radar">Radar</div>
+    <h2 id="briefs-title">El Termómetro Agrivoltaico</h2>
+    <div class="grid-4" id="briefs"></div>
+  </section>
+
+  <section class="section" id="portada">
+    <article class="feature">
+      <img src="assets/Ph2Mi.jpg" alt="Berries bajo estructura solar elevada">
+      <div>
+        <div class="kicker" data-es="En portada · págs. 6–9" data-en="Cover · pp. 6–9">En portada · págs. 6–9</div>
+        <h2 id="cover-title" style="font-size:40px;">Berries bajo techo solar</h2>
+        <p id="cover-sub"><strong>El caso piloto de 0.5 MW en Bocas, San Luis Potosí.</strong></p>
+        <p id="cover-body">Estructuras elevadas a 3.5 m y un sistema de baterías de 500 kWh: cómo un huerto de berries puede convertir la sombra en escudo contra el calor, las heladas y el granizo. Es un caso de diseño, no un informe de rendimiento publicado: el número que lo volvería agrivoltaico es la parcela testigo.</p>
+        <div class="stats" id="cover-stats"></div>
+        <p style="margin-top:16px;"><a class="btn btn-ink" href="assets/Doble-Cosecha-N01-Q1-2027.pdf" download id="read-story">Leer el reportaje en PDF</a></p>
+      </div>
+    </article>
+  </section>
+
+  <section class="section" id="dual">
+    <h2 id="dual-title">Una revista, dos lectores</h2>
+    <div class="grid-2">
+      <article class="card">
+        <div class="tag" id="d1-tag">Para el campo</div>
+        <h3 id="d1-title">El mito de la sombra</h3>
+        <p id="d1-body">Por qué el exceso de sol quema cosechas y cómo el panel actúa como escudo climático. Evidencia de Biosfera 2 y de la parcela PASE del IER-UNAM en Topilejo.</p>
+        <p class="note" id="d1-who">Productores, distritos de riego, ejidos, SADER, FIRA y academia</p>
+      </article>
+      <article class="card">
+        <div class="tag" id="d2-tag">Para desarrolladores</div>
+        <h3 id="d2-title">Licencia social y rentabilidad</h3>
+        <p id="d2-body">Cómo el pastoreo solar y el cultivo entre hileras convierten al desarrollador de invasor en aliado local. Sin altura, cobertura y rendimiento medido, la etiqueta no alcanza.</p>
+        <p class="note" id="d2-who">EPC, fondos, inversionistas, fabricantes, SENER, CNE y CFE</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="indice">
+    <div class="kicker" data-es="Edición Nº 01" data-en="Issue No. 01">Edición Nº 01</div>
+    <h2 id="index-title">En este número</h2>
+    <div id="index"></div>
+  </section>
+
+  <section class="section" id="descarga">
+    <div class="card" style="display:grid; grid-template-columns: 1.2fr 0.8fr; gap: 18px; align-items:center;">
+      <div>
+        <div class="kicker" data-es="Listo para revisión de imprenta" data-en="Ready for prepress review">Listo para revisión de imprenta</div>
+        <h2 id="dl-title">Descargar la edición</h2>
+        <p id="dl-body">PDF de 24 páginas, A4, sangrado de 3 mm, marcas de corte, tipografía embebida. Color en RGB: el impresor debe pasar a PDF/X-4 y CMYK. Fotografías de ilustración editorial, a sustituir por toma de sitio antes del tiro comercial. Precios de suscripción abiertos.</p>
+        <a class="btn btn-gold" href="assets/Doble-Cosecha-N01-Q1-2027.pdf" download>Doble-Cosecha-N01-Q1-2027.pdf</a>
+      </div>
+      <img src="assets/G1peY.jpg" alt="Parcela de investigación bajo paneles" style="height:220px; width:100%; object-fit:cover;">
+    </div>
+  </section>
+
+  <section class="section" id="ler">
+    <div class="ler-box">
+      <div>
+        <div class="kicker" style="color:var(--gold)" data-es="Herramienta" data-en="Tool">Herramienta</div>
+        <h2 id="ler-title" style="color:white;">Calcula tu índice de equivalencia de tierra</h2>
+        <p id="ler-body">El LER compara lo que produce una hectárea agrivoltaica contra lo que producirían el cultivo y el parque solar por separado. Arriba de 1.0, la misma tierra rinde más. Es un ensayo, no una parcela testigo.</p>
+        <label class="slider"><span id="ler-crop-label">Rendimiento del cultivo vs. monocultivo</span> <b id="crop-val">90%</b>
+          <input id="crop" type="range" min="40" max="160" value="90">
+        </label>
+        <label class="slider"><span id="ler-en-label">Electricidad vs. parque dedicado</span> <b id="en-val">70%</b>
+          <input id="energy" type="range" min="30" max="100" value="70">
+        </label>
+      </div>
+      <div>
+        <div class="ler-num" id="ler-num">1.60</div>
+        <p id="ler-verdict">1.60 ha de trabajo en una sola. Ahorro de suelo frente a dos proyectos separados: 38%.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="comunidad">
+    <div class="grid-2">
+      <img src="assets/YjppN.jpg" alt="Chinampa en Xochimilco con estructura solar pequeña" style="height:280px; width:100%; object-fit:cover; border:2px solid var(--ink);">
+      <div>
+        <div class="kicker">AMAYAD</div>
+        <h2 id="com-title">Donde se juntan los dos oficios</h2>
+        <p id="com-body">La asociación se fundó en 2024. Seis macrorregiones, cursos en PASE y Dachimilco, y el 24 de noviembre de 2026 el lanzamiento del libro Cosechando el Sol Dos Veces junto con una iniciativa de política pública. Esta revista sale de ese mismo escritorio.</p>
+        <p><a href="https://laescobedo.github.io/amayad-preview-site/">amayad-preview.netlify.app</a> · info@bytets.com</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="suscripcion">
+    <h2 id="sub-title">Suscríbete</h2>
+    <p id="sub-body">Cuatro ediciones al año. Los precios del colector los fija el consejo; aquí queda el registro de interés.</p>
+    <div class="plans">
+      <article class="plan"><div class="tag" data-es="Digital" data-en="Digital">Digital</div><strong data-es="Por definir" data-en="To be set">Por definir</strong><p data-es="Archivo de ediciones y herramientas, incluido el LER." data-en="Issue archive and tools, including the LER calculator.">Archivo de ediciones y herramientas, incluido el LER.</p></article>
+      <article class="plan"><div class="tag" data-es="Impresa + digital" data-en="Print + digital">Impresa + digital</div><strong data-es="Por definir" data-en="To be set">Por definir</strong><p data-es="Cuatro ediciones de colección con envío en México." data-en="Four collector's issues shipped within Mexico.">Cuatro ediciones de colección con envío en México.</p></article>
+      <article class="plan"><div class="tag">AMAYAD</div><strong data-es="Incluida" data-en="Included">Incluida</strong><p data-es="Parte de la membresía de agricultor, corporativa o startup." data-en="Part of farmer, corporate or startup membership.">Parte de la membresía de agricultor, corporativa o startup.</p></article>
+    </div>
+    <form class="sub" id="sub-form">
+      <input type="email" id="email" required placeholder="tu@correo.com" aria-label="Correo">
+      <button class="btn btn-ink" type="submit" id="sub-btn">Avisarme</button>
+    </form>
+    <p class="note" id="sub-msg"></p>
+    <p style="margin-top:22px;" id="ad">Anúnciate en Doble Cosecha. Media kit: <a href="mailto:info@bytets.com">info@bytets.com</a>.</p>
+  </section>
+</div>
+<footer>
+  <div class="wrap">
+    <strong style="font-family:Fraunces,serif; font-size:28px;">Doble Cosecha</strong>
+    <p id="footer">Doble Cosecha es la revista trimestral de la Asociación Mexicana de Agrivoltaics y Agricultura Digital, A.C. (AMAYAD). Editor: Luis Alfonso Escobedo. Libro de referencia: Cosechando el Sol Dos Veces.</p>
+    <p class="note" style="color:#C9D4C4;">ISSN pendiente · depósito legal pendiente · fundación de AMAYAD, 2024 · © 2026</p>
+  </div>
+</footer>
+<script>
+const copy = {
+  es: {
+    publisher: "Una publicación de AMAYAD · Nº 01 · Q1 2027",
+    assoc: "Asociación Mexicana de Agrivoltaics y Agricultura Digital",
+    assocLink: "Sitio de AMAYAD",
+    kicker: "Revista trimestral de agrivoltaica · Edición Nº 01",
+    heroTitle: "La revolución del doble cosechado",
+    heroLede: "Energía y alimento en la misma hectárea. Ingeniería, agronomía, finanzas y política pública para quienes construyen la agrivoltaica en México y Latinoamérica.",
+    ctaPdf: "Descargar el PDF de imprenta",
+    ctaSub: "Recibir la edición impresa",
+    ctaRead: "Ver el índice",
+    heroNote: "Nº 01 · 24 páginas · A4 con sangrado de 3 mm y marcas de corte. Firma a caballete. Editor: Luis Alfonso Escobedo.",
+    figcap: "Estructura elevada · cultivo entre hileras · BESS · ilustración editorial de portada",
+    briefsTitle: "El Termómetro Agrivoltaico",
+    briefs: [
+      ["Regulación", "Interconectar sin permiso de generación", "Centrales menores de 0.7 MW: solicitud ante CFE, sin permiso de generación de la CNE."],
+      ["Tecnología", "Bambú solar", "Guadua y Otatea como línea de pilotos comunitarios, no como poste certificado de 3.5 m."],
+      ["Finanzas", "ISR, artículo 34", "Deducción inmediata para equipo renovable de autoconsumo. El caso con cifras va en el Nº 02."],
+      ["Economía circular", "Second Life of Solar", "Paneles dados de baja como pieza con procedencia. La planta en México sigue siendo propuesta."]
+    ],
+    coverTitle: "Berries bajo techo solar",
+    coverSub: "El caso piloto de 0.5 MW en Bocas, San Luis Potosí.",
+    coverBody: "Estructuras elevadas a 3.5 m y un sistema de baterías de 500 kWh: cómo un huerto de berries puede convertir la sombra en escudo contra el calor, las heladas y el granizo. Es un caso de diseño, no un informe de rendimiento publicado: el número que lo volvería agrivoltaico es la parcela testigo.",
+    stats: [["2–4 °C", "menos en el dosel"], ["35%", "agua de riego, rango de diseño"], ["3.5 m", "altura libre"], ["500 kWh", "almacenamiento"]],
+    readStory: "Leer el reportaje en PDF",
+    dualTitle: "Una revista, dos lectores",
+    d1: ["Para el campo", "El mito de la sombra", "Por qué el exceso de sol quema cosechas y cómo el panel actúa como escudo climático. Evidencia de Biosfera 2 y de la parcela PASE del IER-UNAM en Topilejo.", "Productores, distritos de riego, ejidos, SADER, FIRA y academia"],
+    d2: ["Para desarrolladores", "Licencia social y rentabilidad", "Cómo el pastoreo solar y el cultivo entre hileras convierten al desarrollador de invasor en aliado local. Sin altura, cobertura y rendimiento medido, la etiqueta no alcanza.", "EPC, fondos, inversionistas, fabricantes, SENER, CNE y CFE"],
+    indexTitle: "En este número",
+    index: [
+      ["03", "Carta del editor", "Por qué una revista, y por qué ahora"],
+      ["05", "El termómetro agrivoltaico", "Interconexión, bambú, ISR y segunda vida"],
+      ["06", "En portada", "Berries bajo techo solar en Bocas, SLP"],
+      ["10", "El mito de la sombra", "Microclima, agua y trece cultivos"],
+      ["12", "Qué cuenta como agrivoltaica", "DIN SPEC, loi APER, Italia, Japón, el hueco mexicano"],
+      ["15", "Dachimilco", "Chinampa, sensores y NDVI"],
+      ["18", "Ovejas y licencia social", "113,050 ovejas en el censo ASGA 2024"],
+      ["19", "LER", "Cómo leer el índice sin autoengañarse"],
+      ["20", "Second Life of Solar", "Residuo, arte y una planta que todavía no existe"],
+      ["22", "Las 5 C", "La lista de InSPIRE antes de firmar"],
+      ["23", "Próximo número", "Q2 2027: maíz, chile y el estándar mexicano"]
+    ],
+    dlTitle: "Descargar la edición",
+    dlBody: "PDF de 24 páginas, A4, sangrado de 3 mm, marcas de corte, tipografía embebida. Color en RGB: el impresor debe pasar a PDF/X-4 y CMYK. Fotografías de ilustración editorial, a sustituir por toma de sitio antes del tiro comercial. Precios de suscripción abiertos.",
+    lerTitle: "Calcula tu índice de equivalencia de tierra",
+    lerBody: "El LER compara lo que produce una hectárea agrivoltaica contra lo que producirían el cultivo y el parque solar por separado. Arriba de 1.0, la misma tierra rinde más. Es un ensayo, no una parcela testigo.",
+    lerCrop: "Rendimiento del cultivo vs. monocultivo",
+    lerEn: "Electricidad vs. parque dedicado",
+    lerGood: "Una hectárea hace el trabajo de %X%. Frente a dos proyectos separados, el suelo que no hace falta ocupar: %S%%.",
+    lerBad: "En 1.0 o por debajo, la misma tierra no rinde más. Hay que rediseñar altura, calle o cultivo.",
+    comTitle: "Donde se juntan los dos oficios",
+    comBody: "La asociación se fundó en 2024. Seis macrorregiones, cursos en PASE y Dachimilco, y el 24 de noviembre de 2026 el lanzamiento del libro Cosechando el Sol Dos Veces junto con una iniciativa de política pública. Esta revista sale de ese mismo escritorio.",
+    subTitle: "Suscríbete",
+    subBody: "Cuatro ediciones al año. Los precios del colector los fija el consejo; aquí queda el registro de interés.",
+    subBtn: "Avisarme",
+    emailPh: "tu@correo.com",
+    subOk: "Quedó anotado en este navegador. Escríbenos a info@bytets.com para confirmar envío.",
+    ad: "Anúnciate en Doble Cosecha. Media kit: ",
+    footer: "Doble Cosecha es la revista trimestral de la Asociación Mexicana de Agrivoltaics y Agricultura Digital, A.C. (AMAYAD). Editor: Luis Alfonso Escobedo. Libro de referencia: Cosechando el Sol Dos Veces."
+  },
+  en: {
+    publisher: "An AMAYAD publication · No. 01 · Q1 2027",
+    assoc: "Mexican Association for Agrivoltaics and Digital Agriculture",
+    assocLink: "AMAYAD site",
+    kicker: "Quarterly agrivoltaics magazine · Issue No. 01",
+    heroTitle: "The double-harvest revolution",
+    heroLede: "Energy and food on the same hectare. Engineering, agronomy, finance and public policy for the people building agrivoltaics in Mexico and Latin America.",
+    ctaPdf: "Download the press PDF",
+    ctaSub: "Get the print edition",
+    ctaRead: "See the contents",
+    heroNote: "No. 01 · 24 pages · A4 with 3 mm bleed and crop marks. Saddle stitch. Editor: Luis Alfonso Escobedo.",
+    figcap: "Elevated structure · crop between rows · BESS · editorial cover illustration",
+    briefsTitle: "The agrivoltaic thermometer",
+    briefs: [
+      ["Regulation", "Interconnect without a generation permit", "Plants under 0.7 MW: CFE interconnection request, no CNE generation permit."],
+      ["Technology", "Solar bamboo", "Guadua and Otatea as a community-pilot line, not a certified 3.5 m post."],
+      ["Finance", "Income tax, Article 34", "Immediate deduction for on-farm renewable equipment. The numbered case is in Issue 02."],
+      ["Circularity", "Second Life of Solar", "Decommissioned modules as provenance-tracked pieces. The Mexican plant is still a proposal."]
+    ],
+    coverTitle: "Berries under a solar roof",
+    coverSub: "The 0.5 MW design case in Bocas, San Luis Potosí.",
+    coverBody: "Arrays at 3.5 m and 500 kWh of storage: how a berry orchard can turn shade into a shield against heat, frost and hail. A design case, not a published yield trial. What would make it agrivoltaic is a witness plot.",
+    stats: [["2–4 °C", "cooler canopy"], ["35%", "irrigation, design range"], ["3.5 m", "clearance"], ["500 kWh", "storage"]],
+    readStory: "Read the feature in the PDF",
+    dualTitle: "One magazine, two readers",
+    d1: ["For the farm", "The shade myth", "Why excess sun burns a harvest, and how the panel works as a climate shield. Evidence from Biosphere 2 and the IER-UNAM PASE plot at Topilejo.", "Growers, irrigation districts, ejidos, SADER, FIRA and academia"],
+    d2: ["For developers", "Social license and return", "How solar grazing and inter-row crops turn a developer from invader into local ally. Without clearance, coverage and a measured yield, the label is not enough.", "EPCs, funds, investors, manufacturers, SENER, CNE and CFE"],
+    indexTitle: "In this issue",
+    index: [
+      ["03", "Editor's letter", "Why a quarterly, and why now"],
+      ["05", "The agrivoltaic thermometer", "Interconnection, bamboo, tax and second life"],
+      ["06", "Cover", "Berries under a solar roof in Bocas, SLP"],
+      ["10", "The shade myth", "Microclimate, water and thirteen crops"],
+      ["12", "What counts", "DIN SPEC, loi APER, Italy, Japan, the Mexican gap"],
+      ["15", "Dachimilco", "Chinampa, sensors and NDVI"],
+      ["18", "Sheep and social license", "113,050 sheep in the 2024 ASGA census"],
+      ["19", "LER", "How to read the index without fooling yourself"],
+      ["20", "Second Life of Solar", "Waste, art, and a plant that does not exist yet"],
+      ["22", "The 5 Cs", "InSPIRE's checklist before anyone signs"],
+      ["23", "Next issue", "Q2 2027: maize, chile and a Mexican standard"]
+    ],
+    dlTitle: "Download the issue",
+    dlBody: "24-page PDF, A4, 3 mm bleed, crop marks, fonts embedded. Color is RGB: the printer should convert to PDF/X-4 and CMYK. Photographs are editorial illustrations and should be replaced with site photography before a commercial run. Subscription prices are open.",
+    lerTitle: "Calculate a land equivalent ratio",
+    lerBody: "LER compares one agrivoltaic hectare with the same crop and the same solar farm on separate land. Above 1.0, the same land yields more. A sketch, not a witness plot.",
+    lerCrop: "Crop yield vs. monoculture",
+    lerEn: "Electricity vs. a dedicated solar farm",
+    lerGood: "One hectare does the work of %X%. Land not needed versus two separate projects: %S%%.",
+    lerBad: "At 1.0 or below, the same land does not yield more. Redesign clearance, alley or crop.",
+    comTitle: "Where the two trades meet",
+    comBody: "The association was founded in 2024. Six macro-regions, courses at PASE and Dachimilco, and on 24 November 2026 the launch of Harvesting the Sun Twice plus a public-policy initiative. This magazine comes from that same desk.",
+    subTitle: "Subscribe",
+    subBody: "Four issues a year. Collector prices are for the board to set; this form records interest.",
+    subBtn: "Notify me",
+    emailPh: "you@email.com",
+    subOk: "Saved in this browser. Write to info@bytets.com to confirm delivery.",
+    ad: "Advertise in Double Harvest. Media kit: ",
+    footer: "Double Harvest is the quarterly of the Mexican Association for Agrivoltaics and Digital Agriculture (AMAYAD). Editor: Luis Alfonso Escobedo. Reference book: Harvesting the Sun Twice."
+  }
+};
+let lang = localStorage.getItem("dc-lang") || "es";
+function render() {
+  const t = copy[lang];
+  document.documentElement.lang = lang;
+  document.title = lang === "es" ? "Doble Cosecha · Revista AMAYAD" : "Double Harvest · AMAYAD magazine";
+  publisher.textContent = t.publisher;
+  assoc.textContent = t.assoc;
+  assocLink.textContent = t.assocLink;
+  kicker.textContent = t.kicker;
+  heroTitle.textContent = t.heroTitle;
+  heroLede.textContent = t.heroLede;
+  ctaPdf.textContent = t.ctaPdf;
+  ctaSub.textContent = t.ctaSub;
+  ctaRead.textContent = t.ctaRead;
+  heroNote.textContent = t.heroNote;
+  figcap.textContent = t.figcap;
+  briefsTitle.textContent = t.briefsTitle;
+  briefs.innerHTML = t.briefs.map(([tag, title, body]) => `<article class="card"><div class="tag">${tag}</div><h3>${title}</h3><p>${body}</p></article>`).join("");
+  coverTitle.textContent = t.coverTitle;
+  coverSub.innerHTML = "<strong>" + t.coverSub + "</strong>";
+  coverBody.textContent = t.coverBody;
+  coverStats.innerHTML = t.stats.map(([v, l]) => `<div class="stat"><b>${v}</b><span>${l}</span></div>`).join("");
+  readStory.textContent = t.readStory;
+  dualTitle.textContent = t.dualTitle;
+  [d1Tag, d1Title, d1Body, d1Who].forEach((el, i) => el.textContent = t.d1[i]);
+  [d2Tag, d2Title, d2Body, d2Who].forEach((el, i) => el.textContent = t.d2[i]);
+  indexTitle.textContent = t.indexTitle;
+  index.innerHTML = t.index.map(([n, title, desc]) => `<div class="index-row"><b>${n}</b><div><strong>${title}</strong><div class="note">${desc}</div></div></div>`).join("");
+  dlTitle.textContent = t.dlTitle;
+  dlBody.textContent = t.dlBody;
+  lerTitle.textContent = t.lerTitle;
+  lerBody.textContent = t.lerBody;
+  lerCropLabel.textContent = t.lerCrop;
+  lerEnLabel.textContent = t.lerEn;
+  comTitle.textContent = t.comTitle;
+  comBody.textContent = t.comBody;
+  subTitle.textContent = t.subTitle;
+  subBody.textContent = t.subBody;
+  subBtn.textContent = t.subBtn;
+  email.placeholder = t.emailPh;
+  ad.innerHTML = t.ad + '<a href="mailto:info@bytets.com">info@bytets.com</a>.';
+  footer.textContent = t.footer;
+  document.querySelectorAll("[data-es]").forEach(el => { el.textContent = el.getAttribute(lang === "es" ? "data-es" : "data-en"); });
+  btnEs.classList.toggle("on", lang === "es");
+  btnEn.classList.toggle("on", lang === "en");
+  updateLer();
+}
+function updateLer() {
+  const crop = Number(document.getElementById("crop").value);
+  const energy = Number(document.getElementById("energy").value);
+  document.getElementById("crop-val").textContent = crop + "%";
+  document.getElementById("en-val").textContent = energy + "%";
+  const ler = (crop + energy) / 100;
+  document.getElementById("ler-num").textContent = ler.toFixed(2);
+  const t = copy[lang];
+  const verdict = document.getElementById("ler-verdict");
+  if (ler > 1) {
+    const saved = Math.round((1 - 1 / ler) * 100);
+    const ha = lang === "es" ? ler.toFixed(2).replace(".", ",") + " ha" : ler.toFixed(2) + " ha";
+    verdict.textContent = t.lerGood.replace("%X%", ha).replace("%S%", String(saved));
+  } else verdict.textContent = t.lerBad;
+}
+document.getElementById("crop").addEventListener("input", updateLer);
+document.getElementById("energy").addEventListener("input", updateLer);
+btnEs.addEventListener("click", () => { lang = "es"; localStorage.setItem("dc-lang", lang); render(); });
+btnEn.addEventListener("click", () => { lang = "en"; localStorage.setItem("dc-lang", lang); render(); });
+document.getElementById("sub-form").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const list = JSON.parse(localStorage.getItem("dc-subs") || "[]");
+  list.push({ email: email.value, lang, at: new Date().toISOString() });
+  localStorage.setItem("dc-subs", JSON.stringify(list));
+  subMsg.textContent = copy[lang].subOk;
+  e.target.reset();
+});
+const ids = ["publisher","assoc","assocLink","kicker","heroTitle","heroLede","ctaPdf","ctaSub","ctaRead","heroNote","figcap","briefsTitle","briefs","coverTitle","coverSub","coverBody","coverStats","readStory","dualTitle","d1Tag","d1Title","d1Body","d1Who","d2Tag","d2Title","d2Body","d2Who","indexTitle","index","dlTitle","dlBody","lerTitle","lerBody","lerCropLabel","lerEnLabel","comTitle","comBody","subTitle","subBody","subBtn","email","ad","footer","subMsg","btnEs","btnEn"];
+ids.forEach(id => window[id] = document.getElementById(id));
+render();
+</script>
+</body>
+</html>
